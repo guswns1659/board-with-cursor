@@ -1,0 +1,14 @@
+{
+  "name": "board-project",
+  "version": "1.0.0",
+  "description": "Bulletin Board Project with Spring Boot and React",
+  "scripts": {
+    "kill-ports": "lsof -ti:3000,8080 | xargs kill -9 2>/dev/null || true",
+    "start": "npm run kill-ports && concurrently \"cd backend && ./gradlew bootRun\" \"cd frontend && npm start\"",
+    "install-all": "cd frontend && npm install && cd ../backend && ./gradlew build",
+    "build": "cd frontend && npm run build && cd ../backend && ./gradlew build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
